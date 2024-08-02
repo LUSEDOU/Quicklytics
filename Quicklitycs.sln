@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quicklitycs", "Quicklitycs\Quicklitycs.csproj", "{97C67B30-0634-4961-A5AE-7F864D7B01F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quicklitycs.Localytics", "Quicklitycs.Localytics\Quicklitycs.Localytics.csproj", "{80C75D12-153E-4C7E-877B-6D12E2C175BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quicklitycs.Web", "Quicklitycs.Web\Quicklitycs.Web.csproj", "{8DB91B6D-BADA-4E27-8240-A3B8613DB790}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97C67B30-0634-4961-A5AE-7F864D7B01F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97C67B30-0634-4961-A5AE-7F864D7B01F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97C67B30-0634-4961-A5AE-7F864D7B01F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97C67B30-0634-4961-A5AE-7F864D7B01F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80C75D12-153E-4C7E-877B-6D12E2C175BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C75D12-153E-4C7E-877B-6D12E2C175BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C75D12-153E-4C7E-877B-6D12E2C175BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C75D12-153E-4C7E-877B-6D12E2C175BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB91B6D-BADA-4E27-8240-A3B8613DB790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB91B6D-BADA-4E27-8240-A3B8613DB790}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB91B6D-BADA-4E27-8240-A3B8613DB790}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB91B6D-BADA-4E27-8240-A3B8613DB790}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
