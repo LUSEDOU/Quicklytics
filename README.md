@@ -80,7 +80,11 @@ builder.Services
 Multiple Providers
 
 ```cs
-builder.Services
+
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+IServiceCollection Services = builder.Services;
+
+_ = Services
     .AddMultipleAnalyticsProviders(options =>
     {
         options.Add<GoogleAnalyticsProvider>(provider =>
@@ -98,7 +102,6 @@ builder.Services
 Example of using Configuration
 ```json
 {
-    ...
     "GoogleAnalytics": {
         "TrackingId": "UA-XXXXX-Y"
     },
@@ -109,7 +112,10 @@ Example of using Configuration
 ```
 
 ```cs
-builder.Services
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+IServiceCollection Services = builder.Services;
+
+_ = Services
     .AddMultipleAnalyticsProviders(options =>
     {
         // It will use the configuration section "GoogleAnalytics"
