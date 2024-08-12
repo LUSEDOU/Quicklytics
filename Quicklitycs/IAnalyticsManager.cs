@@ -40,7 +40,7 @@ namespace Quicklitycs
         {
             Queue<Func<Task>> unsentActions = new();
 
-            foreach (var action in actions)
+            foreach (Func<Task> action in actions)
             {
                 try
                 {
@@ -57,7 +57,7 @@ namespace Quicklitycs
         /// <summary>
         /// Queues an action to be sent.
         /// </summary>
-        private async Task ExecuteProviderMethodAsync(Func<Task> method)
+        protected async Task ExecuteProviderMethodAsync(Func<Task> method)
         {
             _unsentActions = await ExcecuteUnsentActionsAsync(_unsentActions);
             try

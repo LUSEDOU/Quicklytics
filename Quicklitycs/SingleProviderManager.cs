@@ -1,39 +1,44 @@
-namespace Quicklitycs;
-
-public class SingleProviderManager : IAnalyticsManager
+namespace Quicklitycs
 {
-    private readonly IAnalyticsProvider _provider;
-
-    public SingleProviderManager(IAnalyticsProvider provider)
+    /// <summary>
+    /// Manages a single analytics provider.
+    /// </summary>
+    public class SingleProviderManager : BaseAnalyticsManager
     {
-        ArgumentNullException.ThrowIfNull(provider, nameof(provider));
-        _provider = provider;
-    }
+        /// <summary>
+        /// The analytics provider.
+        /// </summary>
+        private readonly IAnalyticsProvider _provider;
 
-    Task IAnalyticsManager.IdentifyAsync(string uniqueId)
-    {
-        throw new NotImplementedException();
-    }
-
-    Task IAnalyticsManager.ScreenAsync(string screenName)
-    {
-        throw new NotImplementedException();
-    }
-
-    Task IAnalyticsManager.TrackAsync(string eventName, IDictionary<string, object>? properties)
-    {
-        throw new NotImplementedException();
-    }
-
-    private async Task ExecuteProviderMethodAsync(Func<Task> method)
-    {
-        try
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SingleProviderManager"/> class.
+        /// </summary>
+        /// <param name="provider">The analytics provider.</param>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when <paramref name="provider"/> is <see langword="null"/>.
+        /// </exception>
+        public SingleProviderManager(IAnalyticsProvider provider)
         {
-            await method();
+            ArgumentNullException.ThrowIfNull(provider, nameof(provider));
+            _provider = provider;
         }
-        catch (Exception ex)
+
+        public override async Task IdentifyAsync(string uniqueId)
         {
-            throw new AnalyticsProviderException(_provider, "An error occurred while executing the analytics provider method.", ex);
+            await ExecuteProviderMethodAsync(() => _provider.IdentifyAsync(uniqueId));
+        }
+
+        public override async Task ScreenAsync(string screenName)
+        {
+            await ExecuteProviderMethodAsync(() => _provider.ScreenAsync(screenName));
+        }
+
+        public override async Task TrackAsync(
+            string eventName,
+            IDictionary<string, object>? properties = null
+        )
+        {
+            await ExecuteProviderMethodAsync(() => _provider.TrackAsync(eventName, properties));
         }
     }
 }

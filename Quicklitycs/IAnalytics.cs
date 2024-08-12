@@ -1,11 +1,12 @@
-﻿namespace Quicklitycs
+namespace Quicklitycs
 {
     public interface IAnalytics
     {
-        public void Identify(string userId);
+        void Track(string eventName, IDictionary<string, object>? properties = null);
 
-        public void Track(string eventName, Dictionary<string, object> properties);
+        void Identify(string uniqueId);
 
-        public void Screen(string screenName, Dictionary<string, object> properties);
+        void Screen(string screenName);
     }
+
 }
