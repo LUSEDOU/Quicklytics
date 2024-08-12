@@ -1,0 +1,12 @@
+* [3] Add logging support
+    * [ ] Support for using { Logging:LogLevel:Quicklytics:Warning } (Example)
+    * [ ] Support to not configure the Logging (autoconfig)
+    * [ ] Support for log almost every thing that is happening
+* [4] Add testing
+    * [ ] Good closing event queue
+    * [ ] No error filtering
+    * [ ] No infinite loop
+    * [ ] Good not init or already init exceptions
+* [2] Add documentation
+    * [ ] For devs (README)
+    * [ ] For me cuz I will forget what is this (GOAL)
